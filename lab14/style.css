@@ -1,0 +1,90 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Контейнер для судоку */
+#sudoku-container {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    gap: 1px;
+    margin: 20px auto;
+    max-width: 500px;
+    border: 3px solid #333;
+    background-color: #fff;
+}
+
+/* Ячейки судоку */
+.cell {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+    outline: none;
+    padding: 0;
+}
+
+/* Стили при фокусе на ячейке */
+.cell:focus {
+    background-color: #e7f7ff;
+}
+
+/* Разделительные линии для подсеток 3x3 */
+.cell.subgrid-border-right {
+    border-right: 3px solid #000;
+}
+
+.cell.subgrid-border-bottom {
+    border-bottom: 3px solid #000;
+}
+
+/* Стили для кнопок */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Сообщения о статусе */
+#statusMessage {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Ошибки в ячейках */
+.cell.error {
+    background-color: #f8d7da; /* Красный для ошибок */
+}
+
+/* Корректные заполненные ячейки */
+.cell.correct {
+    background-color: #d4edda; /* Зеленый для корректного заполнения */
+}
+
+/* Успех - когда судоку решено */
+#sudoku-container.correct {
+    background-color: #fff8b3; /* Желтый при успехе */
+}
